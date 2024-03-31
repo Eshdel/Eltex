@@ -128,19 +128,16 @@ void tmpSetMode(mode_t * mode,char X,char Y, char * Z) {
     {
         case '+':
             *mode |= byte;
-            return mode;
+            
         case '-':
             *mode ^= *mode & byte;
-            return mode;
+            
         case '=':
             *mode &= *mode | byte;
-            return mode;
+            
         default:
             break;
     }
-
-    printf("Error change mode");
-    exit(666);
 }
 
 int main() {
